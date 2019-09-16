@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\CitaDto.cs" />
+    <Compile Include="Dtos\EstadoCitaDto.cs" />
     <Compile Include="Dtos\HistoriaClinicaDto.cs" />
     <Compile Include="Dtos\PacienteDto.cs" />
     <Compile Include="Dtos\TablillaDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\CitaRepositorio.cs" />
     <Compile Include="Repositorio\HistoriaClinicaRepositorio.cs" />
+    <Compile Include="Repositorio\ListarCitaEnEsperaRepositorio.cs" />
     <Compile Include="Repositorio\PacienteRepositorio.cs" />
     <Compile Include="Repositorio\TablillaRepositorio.cs" />
   </ItemGroup>

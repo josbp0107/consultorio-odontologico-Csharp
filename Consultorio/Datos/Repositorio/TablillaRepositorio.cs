@@ -7,6 +7,9 @@ using System.Data.SqlClient;
 
 namespace Datos.Repositorio
 {
+    /*
+     * Clase CRUD de la tabla Tablilla Precio
+     */
     public class TablillaRepositorio
     {
 
