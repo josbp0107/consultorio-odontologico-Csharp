@@ -1,0 +1,8 @@
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\obj\Debug\Aplicacion.csprojAssemblyReference.cache
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\obj\Debug\Aplicacion.csproj.CoreCompileInputs.cache
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\bin\Debug\Aplicacion.dll
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\bin\Debug\Aplicacion.pdb
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\bin\Debug\Newtonsoft.Json.dll
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\obj\Debug\Aplicacion.csproj.CopyComplete
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\obj\Debug\Aplicacion.dll
+D:\consultorio_odontologico\ConsultorioWeb\Aplicacion\obj\Debug\Aplicacion.pdb

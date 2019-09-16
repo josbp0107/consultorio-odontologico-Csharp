@@ -1,0 +1,31 @@
+﻿@using Aplicacion.Dtos
+
+@{
+    List<PacienteDto> pacienteDtos = ViewBag.pacientes;
+}
+
+<h2>Listado de pacientes</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Identificacion</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in pacienteDtos)
+        {
+            <tr>
+                <td>@paciente.Identificacion</td>
+                <td>@paciente.Nombre_completo</td>
+                <td>@paciente.Direccion</td>
+                <td>@paciente.Telefono</td>
+                <td>@paciente.Horario_contacto</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,6 @@
+D:\consultorio_odontologico\Consultorio\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\consultorio_odontologico\Consultorio\Datos\bin\Debug\Datos.dll
+D:\consultorio_odontologico\Consultorio\Datos\bin\Debug\Datos.pdb
+D:\consultorio_odontologico\Consultorio\Datos\obj\Debug\Datos.dll
+D:\consultorio_odontologico\Consultorio\Datos\obj\Debug\Datos.pdb
+D:\consultorio_odontologico\Consultorio\Datos\obj\Debug\Datos.csprojAssemblyReference.cache

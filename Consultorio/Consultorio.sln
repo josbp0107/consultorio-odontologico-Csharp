@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{0FFEF6DB-5146-45D6-86FA-A699334128E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultorioWebAPI", "ConsultorioWebAPI\ConsultorioWebAPI.csproj", "{E4993E77-0DC2-4CD4-888B-65088661C443}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FFEF6DB-5146-45D6-86FA-A699334128E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFEF6DB-5146-45D6-86FA-A699334128E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFEF6DB-5146-45D6-86FA-A699334128E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFEF6DB-5146-45D6-86FA-A699334128E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4993E77-0DC2-4CD4-888B-65088661C443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4993E77-0DC2-4CD4-888B-65088661C443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4993E77-0DC2-4CD4-888B-65088661C443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4993E77-0DC2-4CD4-888B-65088661C443}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56921429-2384-47E2-B432-79E2871B21C7}
+	EndGlobalSection
+EndGlobal

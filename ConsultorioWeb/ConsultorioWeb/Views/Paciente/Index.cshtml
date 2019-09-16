@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+  $(document).ready(function () {
+     $("#pacientes").html("cargando...").load("@Url.Action("Listado")");
+
+        $("#form").submit(function (e) {
+            e.preventDefault();
+            $.post("@Url.Action("GuardarPaciente")", $("#form").serialize(), function() {
+                $("#pacientes").html("cargando...").load("@Url.Action("Listado")");
+            });
+        });
+    });
+</script>
+
+<h2>Index</h2>
+<div id="nuevo">
+    <div class="row">
+        <form id="form">
+            <div class="col-lg-3">
+                <label>Idenficacion</label>
+                <div class="controls">
+                    <input type="text" id="identificacion" name="identificacion" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label>nombre completo</label>
+                <div class="controls">
+                    <input type="text" id="nombre_completo" name="nombre_completo" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label>direccion</label>
+                <div class="controls">
+                    <input type="text" id="direccion" name="direccion" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label>telefono</label>
+                <div class="controls">
+                    <input type="text" id="telefono" name="telefono" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label>Horario</label>
+                <div class="controls">
+                    <input type="text" id="horarion_contacto" name="horarion_contacto" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <button class="btn btn-primary btn-block" onclick="guardarPaciente()">Guardar</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
