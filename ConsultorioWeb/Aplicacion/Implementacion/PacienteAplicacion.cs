@@ -36,7 +36,6 @@ namespace Aplicacion.Implementacion
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             httpClient.DefaultRequestHeaders.Accept.Clear();
             
-
             string json = JsonConvert.SerializeObject(dto);
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");

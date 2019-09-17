@@ -41,5 +41,12 @@ namespace ConsultorioWeb.Controllers
         {
             pacienteAplicacion.Guardar(dto);
         }
+
+        public void ActualizarPaciente(PacienteDto pacienteDto)
+        {
+            pacienteAplicacion.Actualizar(pacienteDto);
+
+
+        }
     }
 }
