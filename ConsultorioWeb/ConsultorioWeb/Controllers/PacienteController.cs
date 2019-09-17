@@ -1,11 +1,10 @@
 ﻿using Aplicacion.Implementacion;
-using Datos.Dtos;
+using Aplicacion.Dtos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace ConsultorioWeb.Controllers
 {
@@ -21,20 +20,20 @@ namespace ConsultorioWeb.Controllers
 
         public ActionResult Listado()
         {
-            List<PacienteDto> pacienteDtos = new List<PacienteDto>();
+            List<PacienteDto> listado = new List<PacienteDto>();
             HttpResponseMessage respuesta = pacienteAplicacion.Listar();
 
-            var pacienteDto = respuesta.Content.ReadAsStringAsync().Result;
+            var pacientes = respuesta.Content.ReadAsStringAsync().Result;
 
             try
             {
-
+                listado = JsonConvert.DeserializeObject<List<PacienteDto>>(pacientes);
             }
             catch (Exception ex)
             {
                 string message = ex.Message;
             }
-            ViewBag.paciente = pacienteDtos;
+            ViewBag.pacientes = listado;
             return PartialView();
         }
 

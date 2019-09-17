@@ -1,4 +1,4 @@
-﻿using Datos.Dtos;
+﻿using Aplicacion.Dtos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,12 +18,10 @@ namespace Aplicacion.Implementacion
             HttpResponseMessage respuesta = null;
 
             string urlBase = ConfigurationManager.AppSettings["rutaAPI"];
-
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(urlBase);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
             respuesta = httpClient.GetAsync("api/Paciente").Result;
 
             return respuesta;
@@ -44,6 +42,24 @@ namespace Aplicacion.Implementacion
             content.Headers.ContentType.CharSet = "UTF-8";
 
             httpClient.PostAsync("api/Paciente", content);
+        }
+
+        public void Actualizar(PacienteDto dto)
+        {
+            string urlBase = ConfigurationManager.AppSettings["rutaAPI"];
+
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(urlBase);
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string json = JsonConvert.SerializeObject(dto);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            content.Headers.ContentType.CharSet = "UTF-8";
+
+            httpClient.PostAsync("api/Paciente", content);
+
         }
     }
 }

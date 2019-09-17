@@ -1,7 +1,7 @@
 ﻿@using Aplicacion.Dtos
 
 @{
-    List<PacienteDto> pacienteDtos = ViewBag.pacientes;
+    List<PacienteDto> pacientes = ViewBag.pacientes;
 }
 
 <h2>Listado de pacientes</h2>
@@ -9,16 +9,19 @@
 <table>
     <thead>
         <tr>
+            
             <th>Identificacion</th>
             <th>Nombre</th>
+            <th>Direccion</th>
             <th>Telefono</th>
-            <th>Opciones</th>
+            <th>Horario</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var paciente in pacienteDtos)
+        @foreach (var paciente in pacientes)
         {
             <tr>
+               
                 <td>@paciente.Identificacion</td>
                 <td>@paciente.Nombre_completo</td>
                 <td>@paciente.Direccion</td>

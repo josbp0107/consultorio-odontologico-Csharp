@@ -100,32 +100,6 @@ namespace Datos.Repositorio
             return true;
         }
 
-        public TablillaDto consultarTablilla(int id)
-        {
-            TablillaDto tablillaDto = new TablillaDto();
-
-            try
-            {
-                using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionSQL"].ConnectionString))
-                {
-                    SqlCommand sqlCommand = new SqlCommand("");
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    //sqlCommand.Parameters.AddWithValue("@procedure", 2);
-                    //sqlCommand.Parameters.AddWithValue("@id_tablilla", tablillaDto.Id_tablilla);
-                    connect.Open();
-                    sqlCommand.ExecuteNonQuery();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                string message_err = ex.Message;
-                tablillaDto = null;
-            }
-            return tablillaDto;
-
-        }
-
         /*
          * Metodo que se encarga de listar las tablillas que se encuentras registradas en la base de datos
          * 
@@ -140,9 +114,6 @@ namespace Datos.Repositorio
                 using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionSQL"].ConnectionString))
                 {
 
-                    //SqlCommand sqlCommand = new SqlCommand("SELECT * FROM tablilla_precios", connect);
-                    //sqlCommand.CommandType = CommandType.StoredProcedure;
-                    //sqlCommand.ExecuteNonQuery();
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("ListarTablilla", connect);
                     
                     sqlDataAdapter.Fill(dataSet, "0");
@@ -151,7 +122,6 @@ namespace Datos.Repositorio
                     {
                         var dtoTablilla = new TablillaDto();
 
-                        //dtoTablilla.Id_tablilla = Convert.ToInt32(row["id_tablilla"]);
                         dtoTablilla.Id_tablilla = Convert.ToInt32(row["id_tablilla"]);    
                         dtoTablilla.Nombre = row["nombre"].ToString();
                         dtoTablilla.Precio = Convert.ToInt32(row["precio"]);
