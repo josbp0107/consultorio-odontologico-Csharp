@@ -45,8 +45,6 @@ namespace ConsultorioWeb.Controllers
         public void ActualizarPaciente(PacienteDto pacienteDto)
         {
             pacienteAplicacion.Actualizar(pacienteDto);
-
-
         }
     }
 }
