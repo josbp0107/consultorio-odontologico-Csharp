@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Aplicacion.Dtos
 {
-    [DataContract (Name = "pacientes"), Serializable]
+    [DataContract (Name = "Pacientes"), Serializable]
     public class PacienteDto
     {
         //[DataMember (Name = "id_paciente")]

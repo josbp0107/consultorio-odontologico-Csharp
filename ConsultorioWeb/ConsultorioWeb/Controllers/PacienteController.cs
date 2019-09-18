@@ -37,14 +37,17 @@ namespace ConsultorioWeb.Controllers
             return PartialView();
         }
 
-        public void GuardarPaciente(PacienteDto dto)
+        public ActionResult GuardarPaciente(PacienteDto dto)
         {
             pacienteAplicacion.Guardar(dto);
+            return RedirectToAction("Listado");
         }
 
         public void ActualizarPaciente(PacienteDto pacienteDto)
         {
             pacienteAplicacion.Actualizar(pacienteDto);
         }
+
+       
     }
 }

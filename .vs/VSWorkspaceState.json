@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Consultorio",
+    "\\ConsultorioWeb",
+    "\\ConsultorioWeb\\Aplicacion",
+    "\\ConsultorioWeb\\Aplicacion\\Implementacion",
+    "\\ConsultorioWeb\\ConsultorioWeb",
+    "\\ConsultorioWeb\\ConsultorioWeb\\Controllers"
   ],
+  "SelectedNode": "\\ConsultorioWeb\\Aplicacion\\Implementacion\\PacienteAplicacion.cs",
   "PreviewInSolutionExplorer": false
 }
