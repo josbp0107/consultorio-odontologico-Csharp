@@ -43,9 +43,16 @@ namespace ConsultorioWeb.Controllers
             return RedirectToAction("Listado");
         }
 
-        public void ActualizarPaciente(PacienteDto pacienteDto)
+        public ActionResult ActualizarPaciente(PacienteDto pacienteDto)
         {
             pacienteAplicacion.Actualizar(pacienteDto);
+            return RedirectToAction("Listado");
+        }
+
+        public ActionResult EliminarPaciente(string identificacion)
+        {
+            pacienteAplicacion.Eliminar(identificacion);
+            return RedirectToAction("Listado");
         }
 
        

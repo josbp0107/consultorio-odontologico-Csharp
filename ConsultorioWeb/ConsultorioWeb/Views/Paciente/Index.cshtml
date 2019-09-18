@@ -4,83 +4,113 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@*
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn_Eliminar").click(function () {
+            $.post(@Url.Action("EliminarPaciente"),
+                $("#form").serialize(),
+                function () {
+                    "@Url.Action("Paciente")";
+                });
+        });
 
+    });
+
+</script>
+    *@
 
 @*
     <script>
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            $("#form").submit(function (e) {
-                e.preventDefault();
-                $.post("@Url.Action("GuardarPaciente")", $("#form").serialize(), function() {
-                    $("#pacientes").html("cargando...").load("@Url.Action("GuardarPaciente")");
+                $("#form").submit(function (e) {
+                    e.preventDefault();
+                    $.post("@Url.Action("ActualizarPaciente")", $("#form").serialize(), function() {
+                        $("#pacientes").html("cargando...").load("@Url.Action("Paciente")");
 
+                    });
                 });
             });
-        });
     </script>
 
 
-    <script>
-        $(document).ready(function () {
-            //function will be called on button click having id guardar
-            $("#guardar").click(function (e) {
-                e.preventDefault();
-                $.ajax(
-                    {
-                        type: 'POST', //HTTP POST Method
-                        contentType: "application/json: charset=utf-8",
-                        url: @Url.Action("GuardarPaciente","PacienteController"),
-                        dataType: "json",
-                        data: { //Passing data
-                            identificacion: $("#identificacion").val(''),
-                            nombre_completo: $("#nombre_completo").val(''),
-                            direccion: $("#direccion").val(''),
-                            telefono: $("#telefono").val(''),
-                            horario_contacto: $("#horario_contacto").val('')
-                        }
-                    });
+        <script>
+            $(document).ready(function () {
+                //function will be called on button click having id guardar
+                $("#guardar").click(function (e) {
+                    e.preventDefault();
+                    $.ajax(
+                        {
+                            type: 'POST', //HTTP POST Method
+                            contentType: "application/json: charset=utf-8",
+                            url: @Url.Action("GuardarPaciente","PacienteController"),
+                            dataType: "json",
+                            data: { //Passing data
+                                identificacion: $("#identificacion").val(''),
+                                nombre_completo: $("#nombre_completo").val(''),
+                                direccion: $("#direccion").val(''),
+                                telefono: $("#telefono").val(''),
+                                horario_contacto: $("#horario_contacto").val('')
+                            }
+                        });
+                });
             });
-        });
-    </script>*@
+        </script>*@
 
 <h2>Index</h2>
 <div id="nuevo">
     <div class="row">
         <form id="form" action="@Url.Action("GuardarPaciente", "Paciente")">
-            <div class="col-lg-3">
+
+
+            <div class="col-md-6">
                 <label>Idenficacion</label>
                 <div class="controls">
                     <input type="text" id="identificacion" name="identificacion" value="" class="form-control" />
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-6">
                 <label>nombre completo</label>
                 <div class="controls">
                     <input type="text" id="nombre_completo" name="nombre_completo" value="" class="form-control" />
                 </div>
             </div>
-            <div class="col-lg-3">
+
+
+
+            <div class="col-md-6">
                 <label>direccion</label>
                 <div class="controls">
                     <input type="text" id="direccion" name="direccion" value="" class="form-control" />
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-6">
                 <label>telefono</label>
                 <div class="controls">
                     <input type="text" id="telefono" name="telefono" value="" class="form-control" />
                 </div>
             </div>
-            <div class="col-lg-3">
+
+
+
+            <div class="col-md-6">
                 <label>Horario</label>
                 <div class="controls">
                     <input type="text" id="horario_contacto" name="horario_contacto" value="" class="form-control" />
                 </div>
             </div>
-            <div class="col-lg-12">
-                <button class="btn btn-primary btn-block" onclick="guardarPaciente();">Guardar</button>
+
+
+
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-primary" onclick="guardarPaciente();">Guardar</button>
             </div>
+            <div class="col-md-4">
+                <button class="btn btn-danger btn-danger" id="btn_Eliminar">Eliminar</button>
+            </div>
+
+
         </form>
     </div>
 
