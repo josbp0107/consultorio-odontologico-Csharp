@@ -2,19 +2,31 @@
 @{
     ViewBag.Title = "Eliminar";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string id = ViewBag.id;
 }
+
+@*
+<script>
+
+    $(document).ready(function () {
+        $("#btn_Eliminar").click(function () {
+            $.post(@Url.Action("EliminarPaciente"),
+                $("#form").serialize(),
+                function () {
+                    "@Url.Action("Paciente")";
+                });
+        });
+    });
+</script>*@
+
 
 <h2>Eliminar</h2>
 
 <div class="row">
-    <form id="form" action="@Url.Action("EliminarPaciente", "Paciente")">
+    <form id="form" action="@Url.Action("EliminarPaciente", "Paciente")" >
 
-        <div class="col-md-6">
-            <label>Idenficacion</label>
-            <div class="controls">
-                <input type="text" id="identificacion" name="identificacion" value="" class="form-control" />
-            </div>
-        </div>
+        <input type="hidden" id="identificacion" name="identificacion" value="id" class="form-control" />
+        <h4>¿Estas seguro que quieres eliminar este paciente?</h4>   
 
         <div class="col-md-4">
             <button class="btn btn-danger btn-danger" id="btn_Eliminar">Eliminar</button>

@@ -4,6 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script>
+    $(document).ready(function () {
+        $("#pacientesRegistrados").html("Cargando...").load("@Url.Action("Listado", "Paciente")");
+    });
+</script>
+
 @*
 <script type="text/javascript">
     $(document).ready(function () {
@@ -14,11 +20,10 @@
                     "@Url.Action("Paciente")";
                 });
         });
-
     });
 
 </script>
-    *@
+  *@  
 
 @*
     <script>
@@ -34,29 +39,31 @@
             });
     </script>
 
-
+*@
+@*
         <script>
             $(document).ready(function () {
                 //function will be called on button click having id guardar
-                $("#guardar").click(function (e) {
+                $("#guardar").submit(function (e) {
                     e.preventDefault();
                     $.ajax(
                         {
                             type: 'POST', //HTTP POST Method
                             contentType: "application/json: charset=utf-8",
-                            url: @Url.Action("GuardarPaciente","PacienteController"),
+                            url: @Url.Action("GuardarPaciente","Paciente"),
                             dataType: "json",
                             data: { //Passing data
-                                identificacion: $("#identificacion").val(''),
-                                nombre_completo: $("#nombre_completo").val(''),
-                                direccion: $("#direccion").val(''),
-                                telefono: $("#telefono").val(''),
-                                horario_contacto: $("#horario_contacto").val('')
+                                identificacion: $("#identificacion").val(),
+                                nombre_completo: $("#nombre_completo").val(),
+                                direccion: $("#direccion").val(),
+                                telefono: $("#telefono").val(),
+                                horario_contacto: $("#horario_contacto").val()
                             }
                         });
                 });
             });
-        </script>*@
+        </script>
+*@
 
 <h2>Index</h2>
 <div id="nuevo">
@@ -104,7 +111,7 @@
 
 
             <div class="col-md-4">
-                <button class="btn btn-primary btn-primary" onclick="guardarPaciente();">Guardar</button>
+                <button class="btn btn-primary btn-primary" id="guardar">Guardar</button>
             </div>
             <div class="col-md-4">
                 <button class="btn btn-danger btn-danger" id="btn_Eliminar">Eliminar</button>
@@ -113,9 +120,9 @@
 
         </form>
     </div>
-
-
 </div>
+
+<div id="pacientesRegistrados"></div>
 
 
 

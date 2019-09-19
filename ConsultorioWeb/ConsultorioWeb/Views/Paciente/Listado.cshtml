@@ -15,6 +15,7 @@
             <th>Direccion</th>
             <th>Telefono</th>
             <th>Horario</th>
+            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,9 @@
                 <td>@paciente.Direccion</td>
                 <td>@paciente.Telefono</td>
                 <td>@paciente.Horario_contacto</td>
+                <td>
+                    <a href="@Url.Action("Eliminar", "Paciente", new { id = paciente.Identificacion })">Eliminar</a>
+                </td>
             </tr>
         }
     </tbody>
