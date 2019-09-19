@@ -37,6 +37,13 @@ namespace ConsultorioWeb.Controllers
             return PartialView();
         }
 
+        public ActionResult Eliminar(string id)
+        {
+            ViewBag.id = id;
+            pacienteAplicacion.Eliminar(id);
+            return View();
+        }
+
         public ActionResult GuardarPaciente(PacienteDto dto)
         {
             pacienteAplicacion.Guardar(dto);
@@ -49,9 +56,9 @@ namespace ConsultorioWeb.Controllers
             return RedirectToAction("Listado");
         }
 
-        public ActionResult EliminarPaciente(string identificacion)
+        public ActionResult EliminarPaciente(string id)
         {
-            pacienteAplicacion.Eliminar(identificacion);
+            pacienteAplicacion.Eliminar(id);
             return RedirectToAction("Listado");
         }
 
