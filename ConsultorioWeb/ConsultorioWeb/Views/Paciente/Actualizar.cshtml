@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Actualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Actualizar</h2>
+
+<div class="row">
+    <form id="form" action="@Url.Action("ActualizarPaciente","Paciente")">
+
+        <div class="col-md-6">
+            <label>Idenficacion</label>
+            <div class="controls">
+                <input type="text" id="identificacion" name="identificacion" value="" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label>nombre completo</label>
+            <div class="controls">
+                <input type="text" id="nombre_completo" name="nombre_completo" value="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label>direccion</label>
+            <div class="controls">
+                <input type="text" id="direccion" name="direccion" value="" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label>telefono</label>
+            <div class="controls">
+                <input type="text" id="telefono" name="telefono" value="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label>Horario</label>
+            <div class="controls">
+                <input type="text" id="horario_contacto" name="horario_contacto" value="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-primary" id="guardar">Guardar</button>
+        </div>
+    </form>
+</div>
+
