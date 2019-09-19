@@ -30,6 +30,7 @@
                 <td>@paciente.Horario_contacto</td>
                 <td>
                     <a href="@Url.Action("Eliminar", "Paciente", new { id = paciente.Identificacion })">Eliminar</a>
+                    <a href="@Url.Action("Actualizar", "Paciente", new { pacientes = paciente.Identificacion , paciente.Nombre_completo , paciente.Direccion, paciente.Telefono, paciente.Horario_contacto })">Editar</a>
                 </td>
             </tr>
         }

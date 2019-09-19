@@ -57,25 +57,19 @@ namespace Aplicacion.Implementacion
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             content.Headers.ContentType.CharSet = "UTF-8";
 
-            httpClient.PostAsync("api/Paciente", content);
+            httpClient.PutAsync("api/Paciente", content);
 
         }
 
-        public void Eliminar(string identificacion)
+        public void Eliminar(string id)
         {
-            string urlBase = ConfigurationManager.AppSettings["rutaAPI"];
+            string urlBase = ConfigurationManager.AppSettings["rutaAPI"]; // Se pasa la ruta del proyecto
 
-            HttpClient httpClient = new HttpClient();
+            HttpClient httpClient = new HttpClient(); // objeto que envia solicitudes HTTP y recibir respuestas HTTP por medio de la URL 
             httpClient.BaseAddress = new Uri(urlBase);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            string json = JsonConvert.SerializeObject(identificacion);
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            content.Headers.ContentType.CharSet = "UTF-8";
-
-            httpClient.PostAsync("api/Paciente", content);
+            httpClient.DeleteAsync($"api/Paciente/{id}");
         }
     }
 }

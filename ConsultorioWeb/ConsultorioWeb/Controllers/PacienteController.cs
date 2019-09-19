@@ -37,6 +37,13 @@ namespace ConsultorioWeb.Controllers
             return PartialView();
         }
 
+        public ActionResult Actualizar(PacienteDto pacienteDto)
+        {
+            ViewBag.pacientes = pacienteDto;
+            pacienteAplicacion.Actualizar(pacienteDto);
+            return View();
+        }
+
         public ActionResult Eliminar(string id)
         {
             ViewBag.id = id;
