@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<div class="row">
+    <form id="form" action="@Url.Action("EliminarPaciente", "Paciente")">
+
+        <div class="col-md-6">
+            <label>Idenficacion</label>
+            <div class="controls">
+                <input type="text" id="identificacion" name="identificacion" value="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <button class="btn btn-danger btn-danger" id="btn_Eliminar">Eliminar</button>
+        </div>
+
+
+    </form>
+</div>
+
