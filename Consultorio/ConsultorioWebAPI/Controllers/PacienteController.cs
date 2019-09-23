@@ -79,7 +79,7 @@ namespace WebAPI.Controllers
          *  Update Query
          */
         [HttpPut]
-        public HttpResponseMessage Update(int id,[FromBody] PacienteDto pacienteDto)
+        public HttpResponseMessage Update([FromBody] PacienteDto pacienteDto)
         {
             HttpStatusCode codigoEstado = new HttpStatusCode();
             object informacion = null;

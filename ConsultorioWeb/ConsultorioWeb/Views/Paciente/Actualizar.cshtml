@@ -1,6 +1,13 @@
-﻿
+﻿@using Aplicacion.Dtos
 @{
+    List<PacienteDto> pacientes = ViewBag.pacientes;
     ViewBag.Title = "Actualizar";
+    //string id = ViewBag.id;
+    string identificacion = ViewBag.identificacion;
+    string nombre_completo = ViewBag.nombre_completo;
+    string direccion = ViewBag.direccion;
+    string telefono = ViewBag.telefono;
+    int horario_contacto = ViewBag.horario_contacto;
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
@@ -10,38 +17,41 @@
 <div class="row">
     <form id="form" action="@Url.Action("ActualizarPaciente","Paciente")">
 
-        <div class="col-md-6">
-            <label>Idenficacion</label>
-            <div class="controls">
-                <input type="text" id="identificacion" name="identificacion" value="" class="form-control" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <label>nombre completo</label>
-            <div class="controls">
-                <input type="text" id="nombre_completo" name="nombre_completo" value="" class="form-control" />
-            </div>
-        </div>
 
-        <div class="col-md-6">
-            <label>direccion</label>
-            <div class="controls">
-                <input type="text" id="direccion" name="direccion" value="" class="form-control" />
+            <div class="col-md-6">
+                <label>Idenficacion</label>
+                <div class="controls">
+                    <input type="text" id="identificacion" name="identificacion" value="@identificacion" class="form-control" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <label>telefono</label>
-            <div class="controls">
-                <input type="text" id="telefono" name="telefono" value="" class="form-control" />
-            </div>
-        </div>
 
-        <div class="col-md-6">
-            <label>Horario</label>
-            <div class="controls">
-                <input type="text" id="horario_contacto" name="horario_contacto" value="" class="form-control" />
+            <div class="col-md-6">
+                <label>nombre completo</label>
+                <div class="controls">
+                    <input type="text" id="nombre_completo" name="nombre_completo" value="@nombre_completo" class="form-control" />
+                </div>
             </div>
-        </div>
+
+            <div class="col-md-6">
+                <label>direccion</label>
+                <div class="controls">
+                    <input type="text" id="direccion" name="direccion" value="@direccion" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>telefono</label>
+                <div class="controls">
+                    <input type="text" id="telefono" name="telefono" value="@telefono" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label>Horario</label>
+                <div class="controls">
+                    <input type="text" id="horario_contacto" name="" value="@horario_contacto" class="form-control" />
+                </div>
+            </div>
+      
 
         <div class="col-md-4">
             <button class="btn btn-primary btn-primary" id="guardar">Guardar</button>

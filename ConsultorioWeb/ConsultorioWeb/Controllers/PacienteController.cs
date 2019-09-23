@@ -39,8 +39,15 @@ namespace ConsultorioWeb.Controllers
 
         public ActionResult Actualizar(PacienteDto pacienteDto)
         {
-            ViewBag.pacientes = pacienteDto;
+            //ViewBag.id = id;
+            ViewBag.identificacion = pacienteDto.Identificacion;
+            ViewBag.nombre_completo = pacienteDto.Nombre_completo;
+            ViewBag.direccion = pacienteDto.Direccion;
+            ViewBag.telefono = pacienteDto.Telefono;
+            ViewBag.horario_contacto = pacienteDto.Horario_contacto;
+
             pacienteAplicacion.Actualizar(pacienteDto);
+            
             return View();
         }
 
@@ -59,7 +66,15 @@ namespace ConsultorioWeb.Controllers
 
         public ActionResult ActualizarPaciente(PacienteDto pacienteDto)
         {
+            //ViewBag.id = id;
+            ViewBag.identificacion = pacienteDto.Identificacion;
+            ViewBag.nombre_completo = pacienteDto.Nombre_completo;
+            ViewBag.direccion = pacienteDto.Direccion;
+            ViewBag.telefono = pacienteDto.Telefono;
+            ViewBag.horario_contacto = pacienteDto.Horario_contacto;
+
             pacienteAplicacion.Actualizar(pacienteDto);
+            
             return RedirectToAction("Listado");
         }
 

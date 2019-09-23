@@ -122,8 +122,10 @@ namespace Datos.Repositorio
             {
                 using ( SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionSQL"].ConnectionString))
                 {
-                    SqlCommand sqlCommand = new SqlCommand("");
-                    connect.Open();
+                    SqlCommand sqlCommand = new SqlCommand("ConsultarPaciente");
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@identificacion", identificacion); // Parametro de identificacion
+                    connect.Open(); // Abre la conexion
                     sqlCommand.ExecuteNonQuery();
                 }
 
