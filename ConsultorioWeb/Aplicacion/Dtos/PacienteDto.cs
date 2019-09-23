@@ -6,8 +6,8 @@ namespace Aplicacion.Dtos
     [DataContract (Name = "Pacientes"), Serializable]
     public class PacienteDto
     {
-        //[DataMember (Name = "id_paciente")]
-        //public int Id_paciente { get; set; }
+        [DataMember (Name = "id_paciente")]
+        public int Id_paciente { get; set; }
         
         [DataMember (Name = "identificacion")]
         public string Identificacion { get; set; }

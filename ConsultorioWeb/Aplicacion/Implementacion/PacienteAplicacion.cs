@@ -72,6 +72,6 @@ namespace Aplicacion.Implementacion
             httpClient.DeleteAsync($"api/Paciente/{id}");
         }
 
-
+       
     }
 }
